@@ -15,6 +15,8 @@ int main(int argc, char **argv)
         int saved = nbligne-1;
         int espace = saved;
         int x = 1;
+        if (error(argc, argv) == 84)
+                return (84);
         put_ligne(nbligne);
         while (nbligne != 0)
         {
@@ -36,4 +38,19 @@ int main(int argc, char **argv)
         }
         nbligne = saved_nbligne;
         put_ligne(nbligne);
+        return (0);
+}
+
+int error(int argc, char **argv)
+{
+        int i = my_getnbr(argv[1]);
+        int x = my_getnbr(argv[2]);
+        if (argc != 3)
+                return (84);
+        else if (i < 1 || i >= 100)
+                return (84);
+        else if (x < 1)
+                return (84);
+        else
+               return (0);
 }
