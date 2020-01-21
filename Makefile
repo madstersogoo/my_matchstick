@@ -1,3 +1,10 @@
+##
+## EPITECH PROJECT, 2019
+## matchstick
+## File description:
+## makefile
+##
+
 NAME	= matchstick
 
 CC	= gcc
@@ -11,7 +18,8 @@ SRCS	= ./lib/my_getnbr.c \
 	  ./lib/my_strcpy.c \
 	  ./lib/my_strlen.c \
 	  ./lib/my_strligne.c \
-	  ./main.c 
+	  ./src/main.c \
+	  ./src/put.c
 
 OBJS	= $(SRCS:.c=.o)
 
