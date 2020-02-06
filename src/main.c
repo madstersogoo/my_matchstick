@@ -21,7 +21,7 @@ int main(int argc, char **argv)
 	}
 	int count = my_getnbr(argv[2]);
         char *str;
-        str = malloc(sizeof(char) * (nbligne * nbligne));
+        str = malloc(sizeof(char) * (nbligne * nbligne) * nbligne);
 	etoile(str, nbligne, count);
 }
 
