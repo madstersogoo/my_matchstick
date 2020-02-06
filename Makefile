@@ -19,7 +19,8 @@ SRCS	= ./lib/my_getnbr.c \
 	  ./lib/my_strlen.c \
 	  ./lib/my_strligne.c \
 	  ./src/main.c \
-	  ./src/put.c
+	  ./src/put.c \
+	  ./src/error.c
 
 OBJS	= $(SRCS:.c=.o)
 

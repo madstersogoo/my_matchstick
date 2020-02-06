@@ -27,8 +27,11 @@ int my_putstr(char const *str);
 char *my_strcpy(char *dest, char const *src);
 int my_strligne(char const *str);
 int my_strlen(char const *str);
-void etoile(char *str, int nbligne);
-void etoile1(char *str, int nbligne);
-void putbar(int nbligne, char *str);
+void etoile(char *str, int nbligne, int count);
+void etoile1(char *str, int nbligne, int count);
+void putbar(int nbligne, char *str, int count);
+void start(int nbligne, int count, char *str);
+void argument(void);
+void linenumber(void);
 
 #endif
