@@ -89,6 +89,5 @@ void etoile1(char *str, int nbligne, int count)
 	str[i] = '\n';
 	i = i + 1;
 	str[i] = '\0';
-	my_putstr(str);
 	start(nbligne, count, str);
 }
