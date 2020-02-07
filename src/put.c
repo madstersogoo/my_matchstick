@@ -12,16 +12,14 @@
 
 void start(int nbligne, int count, char *str)
 {
-	int test = 0;
+	int testplayer = 0;
 	my_putstr(str);
 	printbase();
-	while (test != 1) {
-		test = testmap(str);
-		str = inputplayer(nbligne, count, str);
-	}
+	inputplayer(nbligne, count, str);
+	testplayer = testmapplayer(str);
 }
 
-int inputplayer(int nbligne, int count, char *str)
+void inputplayer(int nbligne, int count, char *str)
 {
 	int x = 0;
 	while (x == 0) {
@@ -40,11 +38,11 @@ int inputplayer(int nbligne, int count, char *str)
 		getline(&buffer,&bufsize,stdin);
 		y = my_getnbr(buffer);
 	}
-	str = removeplayer(x, y, str);
+	str = removeplayer(x, y, str, nbligne, count);
 	return (str);
 }
 
-int testmap(char *str)
+int testmapplayer(char *str)
 {
 	int i = 0;
 	int x = 0;
@@ -59,7 +57,7 @@ int testmap(char *str)
 		return (2);
 }
 
-int removeplayer(int ligne, int matches, char *str)
+void removeplayer(int ligne, int matches, char *str, int nbligne, int count)
 {
 	int i = 0;
 	printplayerturn(ligne, matches);
@@ -77,8 +75,8 @@ int removeplayer(int ligne, int matches, char *str)
 		}
 		i--;
 	}
-	return (str);
 	my_putstr(str);
+	inputia(nbligne, count, str);
 }
 
 

@@ -9,7 +9,6 @@
 
 int main(int argc, char **argv)
 {
-	int argerror = 0;
 	if (argc != 3) {
 		argument();
 		return (84);
