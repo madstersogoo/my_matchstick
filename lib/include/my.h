@@ -30,7 +30,7 @@ int my_strlen(char const *str);
 void etoile(char *str, int nbligne, int count);
 void etoile1(char *str, int nbligne, int count);
 void putbar(int nbligne, char *str, int count);
-void start(int nbligne, int count, char *str);
+int start(int nbligne, int count, char *str);
 void argument(void);
 void linenumber(void);
 

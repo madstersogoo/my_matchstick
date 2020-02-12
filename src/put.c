@@ -10,7 +10,7 @@
 #include <sys/wait.h>
 #include "../lib/include/my.h"
 
-void start(int nbligne, int count, char *str)
+int start(int nbligne, int count, char *str)
 {
 	int testplayer = 0;
 	my_putstr(str);
@@ -61,7 +61,7 @@ void removeplayer(int ligne, int matches, char *str, int nbligne, int count)
 {
 	int i = 0;
 	printplayerturn(ligne, matches);
-	while (ligne + 2 != 0) {
+	while (ligne + 1 != 0) {
 		while (str[i] != '\n') {
 			i++;
 		}
