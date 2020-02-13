@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2019
 ** my.h
 ** File description:
-** my_sokoban_include_warning
+** matchstick
 */
 
 
@@ -33,5 +33,14 @@ void putbar(int nbligne, char *str, int count);
 int start(int nbligne, int count, char *str);
 void argument(void);
 void linenumber(void);
+int testmapplayer(char *str);
+void removeplayer(int ligne, int matches, char *str, int nbligne, int count);
+void inputplayer(int nbligne, int count, char *str);
+void printbase(void);
+void printplayerturn(int nbligne, int matches);
+void printiaturn(int ligne, int matches);
+void inputia(int nbligne, int count, char *str);
+void removeia(int lignechosen, int matchechosen, int nbligne, int count, char *str);
+
 
 #endif

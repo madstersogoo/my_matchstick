@@ -17,6 +17,10 @@ int start(int nbligne, int count, char *str)
 	printbase();
 	inputplayer(nbligne, count, str);
 	testplayer = testmapplayer(str);
+	if (testplayer == 1)
+		return (0);
+	else 
+		return (1);
 }
 
 void inputplayer(int nbligne, int count, char *str)
@@ -38,8 +42,7 @@ void inputplayer(int nbligne, int count, char *str)
 		getline(&buffer,&bufsize,stdin);
 		y = my_getnbr(buffer);
 	}
-	str = removeplayer(x, y, str, nbligne, count);
-	return (str);
+	removeplayer(x, y, str, nbligne, count);
 }
 
 int testmapplayer(char *str)
@@ -78,15 +81,3 @@ void removeplayer(int ligne, int matches, char *str, int nbligne, int count)
 	my_putstr(str);
 	inputia(nbligne, count, str);
 }
-
-
-
-
-
-
-
-
-
-
-
-

@@ -40,9 +40,9 @@ void inputia(int nbligne, int count, char *str)
 {
 	srand(time(0));
         int lignechosen = (rand() %
-	(nbligne - 0 + 1)) + 0; 
+	(nbligne - 1 + 1)) + 1; 
        	int matchechosen = (rand() %
-        (count - 0 + 1)) + 0; 
+        (count - 1 + 1)) + 1; 
 	removeia(lignechosen, matchechosen, nbligne, count, str);
 }
 
