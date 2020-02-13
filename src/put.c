@@ -13,9 +13,10 @@
 int start(int nbligne, int count, char *str)
 {
 	int testplayer = 0;
+	int test;
 	my_putstr(str);
 	printbase();
-	inputplayer(nbligne, count, str);
+	test = inputplayer(nbligne, count, str);
 	testplayer = testmapplayer(str);
 	if (testplayer == 1)
 		return (0);
@@ -23,25 +24,30 @@ int start(int nbligne, int count, char *str)
 		return (1);
 }
 
-void inputplayer(int nbligne, int count, char *str)
+int inputplayer(int nbligne, int count, char *str)
 {
 	int x = 0;
+	int test;
 	while (x == 0) {
 		char *buffer;
 		size_t bufsize = 32;
 		buffer = (char *)malloc(bufsize * sizeof(char));
-		getline(&buffer,&bufsize,stdin);
+		test = getline(&buffer,&bufsize,stdin);
 		x = my_getnbr(buffer);
 	}
+	if (test == -1)
+		return (0);
 	int y = 0;
 	my_putstr("Matches: ");
 	while (y == 0) {
 		char *buffer;
 		size_t bufsize = 32;
 		buffer = (char *)malloc(bufsize * sizeof(char));
-		getline(&buffer,&bufsize,stdin);
+		test = getline(&buffer,&bufsize,stdin);
 		y = my_getnbr(buffer);
 	}
+	if (test == -1)
+		return (0);
 	removeplayer(x, y, str, nbligne, count);
 }
 

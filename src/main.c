@@ -9,6 +9,7 @@
 
 int main(int argc, char **argv)
 {
+	int test;
 	if (argc != 3) {
 		argument();
 		return (84);
@@ -21,22 +22,25 @@ int main(int argc, char **argv)
 	int count = my_getnbr(argv[2]);
         char *str;
         str = malloc(sizeof(char) * (nbligne * nbligne) * nbligne);
-	etoile(str, nbligne, count);
+	test = etoile(str, nbligne, count);
+	if (test == 0)
+		return (0);
 }
 
-void etoile(char *str, int nbligne, int count)
+int etoile(char *str, int nbligne, int count)
 {
 	int i = my_strlen(str);
+	int test;
 	while (i != (nbligne * 2 )+ 1) {
 		str[i] = '*';
 		i++;
 	}
 	str[i] = '\n';
 	i = i + 1;
-	putbar(nbligne, str, count);
+	test = putbar(nbligne, str, count);
 }
 
-void putbar(int nbligne, char *str, int count)
+int putbar(int nbligne, char *str, int count)
 {
 	int bar = 1;
 	int i = my_strlen(str);
@@ -44,6 +48,7 @@ void putbar(int nbligne, char *str, int count)
 	int compteurbar = 0;
 	int x = 1;
 	int space = nbligne - x;
+	int test;
 	while (compteurligne != nbligne) {
 		str[i] = '*';
 		i = i + 1;
@@ -73,13 +78,14 @@ void putbar(int nbligne, char *str, int count)
 		bar = bar + 2;
 		compteurbar = 0;
 	}
-	etoile1(str, nbligne, count);
+	test = etoile1(str, nbligne, count);
 }
 
-void etoile1(char *str, int nbligne, int count)
+int etoile1(char *str, int nbligne, int count)
 {
 	int i = my_strlen(str);
 	int compteur = 0;
+	int test;
 	while (compteur != (nbligne * 2 )+ 1) {
 		str[i] = '*';
 		i++;
@@ -88,5 +94,5 @@ void etoile1(char *str, int nbligne, int count)
 	str[i] = '\n';
 	i = i + 1;
 	str[i] = '\0';
-	start(nbligne, count, str);
+	test = start(nbligne, count, str);
 }
